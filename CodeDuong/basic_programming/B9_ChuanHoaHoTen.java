@@ -1,0 +1,30 @@
+
+package basic_programming;
+import java.util.* ;
+public class B9_ChuanHoaHoTen {
+  
+    public static void main(String[] args) {
+          Scanner in = new Scanner(System.in) ;
+    int t = Integer.parseInt(in.nextLine()) ;
+        while(t-->0){
+            System.out.println(chuanHoa(in.nextLine()));
+        }
+   
+    }
+
+    private static String chuanHoa(String s) {
+            StringTokenizer st = new StringTokenizer(s) ;
+            StringBuilder kq = new StringBuilder() ;
+            while(st.hasMoreTokens()){
+                String tmp =st.nextToken();
+                kq.append(Character.toUpperCase(tmp.charAt(0)));
+                
+                for(int  i= 1 ;i<tmp.length();i++){
+                    kq.append(Character.toLowerCase(tmp.charAt(i)));
+                }
+                kq.append(" ");
+            }
+            return kq.toString().trim();
+    }
+       
+}
